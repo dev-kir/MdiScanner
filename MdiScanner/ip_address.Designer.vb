@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class ip_address
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,29 +22,29 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btn_add = New System.Windows.Forms.Button()
+        Me.btn_return = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'btn_add
+        'btn_return
         '
-        Me.btn_add.Location = New System.Drawing.Point(713, 12)
-        Me.btn_add.Name = "btn_add"
-        Me.btn_add.Size = New System.Drawing.Size(75, 23)
-        Me.btn_add.TabIndex = 0
-        Me.btn_add.Text = "ADD"
-        Me.btn_add.UseVisualStyleBackColor = True
+        Me.btn_return.Location = New System.Drawing.Point(713, 12)
+        Me.btn_return.Name = "btn_return"
+        Me.btn_return.Size = New System.Drawing.Size(75, 23)
+        Me.btn_return.TabIndex = 0
+        Me.btn_return.Text = "RETURN"
+        Me.btn_return.UseVisualStyleBackColor = True
         '
-        'Form1
+        'ip_address
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.btn_add)
-        Me.Name = "Form1"
-        Me.Text = "MdiScanner"
+        Me.Controls.Add(Me.btn_return)
+        Me.Name = "ip_address"
+        Me.Text = "ip_address"
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents btn_add As Button
+    Friend WithEvents btn_return As Button
 End Class
