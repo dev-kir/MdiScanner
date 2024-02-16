@@ -68,6 +68,8 @@ Public Class Form1
     End Sub
 
     Private Sub SetupDataGridView()
+        DataGridView1.DataSource = Nothing
+        DataGridView1.Rows.Clear()
         DataGridView1.AutoGenerateColumns = False
         Dim ipAddressColumn As New DataGridViewTextBoxColumn()
         ipAddressColumn.DataPropertyName = "ip_address"
@@ -98,8 +100,6 @@ Public Class Form1
 
     Private Sub UpdateDataGridView()
         DataGridView1.DataSource = Nothing
-        DataGridView1.Rows.Clear()
-        DataGridView1.DataSource = Nothing
         DataGridView1.DataSource = Me.ipList.OrderBy(Function(item) item.name).ToList()
     End Sub
 
@@ -112,6 +112,8 @@ Public Class Form1
     Private Sub btnScan_Click(sender As Object, e As EventArgs) Handles btnScan.Click
         Dim intervalMinutes As Double
         If Double.TryParse(txtInterval.Text, intervalMinutes) AndAlso intervalMinutes > 0 Then
+            btnScan.Enabled = False
+            btnStop.Enabled = True
             timer.Interval = TimeSpan.FromMinutes(intervalMinutes).TotalMilliseconds
             AddHandler timer.Tick, AddressOf Timer_Tick
             timer.Start()
@@ -121,6 +123,15 @@ Public Class Form1
     End Sub
 
     Private Sub btnStop_Click(sender As Object, e As EventArgs) Handles btnStop.Click
+        btnScan.Enabled = True    ' Enable Scan button
+        btnStop.Enabled = False   ' Disable Stop button
         timer.Stop()
+    End Sub
+
+    Private Sub Form1_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
+        DataGridView1.DataSource = Nothing
+        DataGridView1.Rows.Clear()
+        LoadDataFromFile()
+        UpdateDataGridView()
     End Sub
 End Class
