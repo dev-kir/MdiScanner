@@ -50,7 +50,7 @@ Public Class Form1
     Private Function CheckDeviceStatus(ipAddress As String) As String
         Try
             Dim ping As New Ping()
-            Dim reply As PingReply = ping.Send(ipAddress, 2000)
+            Dim reply As PingReply = ping.Send(ipAddress, 3000)
 
             If reply.Status = IPStatus.Success Then
                 Return "Up"
@@ -113,6 +113,7 @@ Public Class Form1
         Dim intervalMinutes As Double
         If Double.TryParse(txtInterval.Text, intervalMinutes) AndAlso intervalMinutes > 0 Then
             btnScan.Enabled = False
+            btn_add.Enabled = False
             btnStop.Enabled = True
             timer.Interval = TimeSpan.FromMinutes(intervalMinutes).TotalMilliseconds
             AddHandler timer.Tick, AddressOf Timer_Tick
@@ -124,6 +125,7 @@ Public Class Form1
 
     Private Sub btnStop_Click(sender As Object, e As EventArgs) Handles btnStop.Click
         btnScan.Enabled = True    ' Enable Scan button
+        btn_add.Enabled = True    ' Enable Add button
         btnStop.Enabled = False   ' Disable Stop button
         timer.Stop()
     End Sub
@@ -134,4 +136,5 @@ Public Class Form1
         LoadDataFromFile()
         UpdateDataGridView()
     End Sub
+
 End Class
