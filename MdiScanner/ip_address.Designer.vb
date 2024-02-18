@@ -103,7 +103,7 @@ Partial Class ip_address
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btn_return)
         Me.Name = "ip_address"
-        Me.Text = "ip_address"
+        Me.Text = "MdiScanner"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

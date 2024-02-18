@@ -86,8 +86,26 @@ Public Class Form1
         statusColumn.HeaderText = "STATUS"
         statusColumn.Width = 83
         DataGridView1.Columns.Add(statusColumn)
+        For Each column As DataGridViewColumn In DataGridView1.Columns
+            Console.WriteLine($"Column Name: {column.Name}, Index: {column.Index}")
+        Next
+        AddHandler DataGridView1.CellFormatting, AddressOf DataGridView1_CellFormatting
         DataGridView1.DataSource = Nothing
         DataGridView1.DataSource = Me.ipList.OrderBy(Function(item) item.name).ToList()
+    End Sub
+
+    Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs)
+        If e.ColumnIndex = 2 AndAlso e.RowIndex >= 0 Then
+            Dim statusValue As String = CStr(e.Value)
+
+            ' Check if the status is "Down" and set the font color to red
+            If statusValue = "Down" Then
+                e.CellStyle.ForeColor = Color.Red
+            Else
+                ' Reset the font color to the default
+                e.CellStyle.ForeColor = DataGridView1.DefaultCellStyle.ForeColor
+            End If
+        End If
     End Sub
 
     Private Sub Timer_Tick(sender As Object, e As EventArgs)
@@ -95,6 +113,7 @@ Public Class Form1
             Dim status As String = CheckDeviceStatus(item.ip_address)
             item.status = status
         Next
+        Label2.Text = "Scanned at: " & DateTime.Now.ToString("HH:mm:ss")
         UpdateDataGridView()
     End Sub
 
