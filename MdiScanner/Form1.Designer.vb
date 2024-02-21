@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.btn_add = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btnStop = New System.Windows.Forms.Button()
@@ -45,15 +46,17 @@ Partial Class Form1
         '
         'DataGridView1
         '
+        Me.DataGridView1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(12, 41)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(776, 368)
+        Me.DataGridView1.Size = New System.Drawing.Size(776, 479)
         Me.DataGridView1.TabIndex = 2
         '
         'btnStop
         '
-        Me.btnStop.Location = New System.Drawing.Point(512, 415)
+        Me.btnStop.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnStop.Location = New System.Drawing.Point(512, 526)
         Me.btnStop.Name = "btnStop"
         Me.btnStop.Size = New System.Drawing.Size(75, 23)
         Me.btnStop.TabIndex = 7
@@ -62,7 +65,8 @@ Partial Class Form1
         '
         'btnScan
         '
-        Me.btnScan.Location = New System.Drawing.Point(431, 415)
+        Me.btnScan.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnScan.Location = New System.Drawing.Point(431, 526)
         Me.btnScan.Name = "btnScan"
         Me.btnScan.Size = New System.Drawing.Size(75, 23)
         Me.btnScan.TabIndex = 8
@@ -71,15 +75,17 @@ Partial Class Form1
         '
         'txtInterval
         '
-        Me.txtInterval.Location = New System.Drawing.Point(325, 418)
+        Me.txtInterval.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtInterval.Location = New System.Drawing.Point(325, 529)
         Me.txtInterval.Name = "txtInterval"
         Me.txtInterval.Size = New System.Drawing.Size(100, 20)
         Me.txtInterval.TabIndex = 9
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(198, 421)
+        Me.Label1.Location = New System.Drawing.Point(198, 532)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(121, 13)
         Me.Label1.TabIndex = 10
@@ -98,7 +104,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 561)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtInterval)
@@ -106,6 +112,7 @@ Partial Class Form1
         Me.Controls.Add(Me.btnStop)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btn_add)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.Text = "MdiScanner"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

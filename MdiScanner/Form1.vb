@@ -47,16 +47,21 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Function CheckDeviceStatus(ipAddress As String) As String
+    Private Function CheckDeviceStatus(ipAddress As String, maxAttempts As Integer) As String
         Try
+            Dim attempts As Integer = 0
             Dim ping As New Ping()
-            Dim reply As PingReply = ping.Send(ipAddress, 3000)
+            While attempts < maxAttempts
+                Dim reply As PingReply = ping.Send(ipAddress, 2000)
 
-            If reply.Status = IPStatus.Success Then
-                Return "Up"
-            Else
-                Return "Down"
-            End If
+                If reply.Status = IPStatus.Success Then
+                    Return "Up"
+                Else
+                    Threading.Thread.Sleep(1000)
+                    attempts += 1
+                End If
+            End While
+            Return "Down"
         Catch ex As Exception
             Return "Down"
         End Try
@@ -97,12 +102,9 @@ Public Class Form1
     Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs)
         If e.ColumnIndex = 2 AndAlso e.RowIndex >= 0 Then
             Dim statusValue As String = CStr(e.Value)
-
-            ' Check if the status is "Down" and set the font color to red
             If statusValue = "Down" Then
                 e.CellStyle.ForeColor = Color.Red
             Else
-                ' Reset the font color to the default
                 e.CellStyle.ForeColor = DataGridView1.DefaultCellStyle.ForeColor
             End If
         End If
@@ -110,7 +112,7 @@ Public Class Form1
 
     Private Sub Timer_Tick(sender As Object, e As EventArgs)
         For Each item As ip_addresses In ipList
-            Dim status As String = CheckDeviceStatus(item.ip_address)
+            Dim status As String = CheckDeviceStatus(item.ip_address, 2)
             item.status = status
         Next
         Label2.Text = "Scanned at: " & DateTime.Now.ToString("HH:mm:ss")
