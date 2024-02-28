@@ -10,16 +10,16 @@ Public Class ip_address
         Dim ipAddressColumn As New DataGridViewTextBoxColumn()
         ipAddressColumn.DataPropertyName = "ip_address"
         ipAddressColumn.HeaderText = "IP ADDRESS"
-        ipAddressColumn.Width = 200
+        ipAddressColumn.Width = 100
         DataGridView1.Columns.Add(ipAddressColumn)
         Dim nameColumn As New DataGridViewTextBoxColumn()
         nameColumn.DataPropertyName = "name"
         nameColumn.HeaderText = "NAME"
-        nameColumn.Width = 450
+        nameColumn.Width = 252
         DataGridView1.Columns.Add(nameColumn)
         Dim deleteColumn As New DataGridViewButtonColumn()
         deleteColumn.HeaderText = "Delete"
-        deleteColumn.Width = 83
+        deleteColumn.Width = 65
         deleteColumn.Text = "DELETE"
         deleteColumn.UseColumnTextForButtonValue = True
         DataGridView1.Columns.Add(deleteColumn)

@@ -35,7 +35,7 @@ Partial Class ip_address
         '
         'btn_return
         '
-        Me.btn_return.Location = New System.Drawing.Point(713, 12)
+        Me.btn_return.Location = New System.Drawing.Point(397, 12)
         Me.btn_return.Name = "btn_return"
         Me.btn_return.Size = New System.Drawing.Size(75, 23)
         Me.btn_return.TabIndex = 0
@@ -48,40 +48,40 @@ Partial Class ip_address
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(12, 41)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(776, 479)
+        Me.DataGridView1.Size = New System.Drawing.Size(460, 484)
         Me.DataGridView1.TabIndex = 1
         '
         'txtName
         '
         Me.txtName.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.txtName.Location = New System.Drawing.Point(336, 528)
+        Me.txtName.Location = New System.Drawing.Point(192, 533)
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(358, 20)
+        Me.txtName.Size = New System.Drawing.Size(199, 20)
         Me.txtName.TabIndex = 0
         '
         'txtIp_address
         '
         Me.txtIp_address.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.txtIp_address.Location = New System.Drawing.Point(93, 528)
+        Me.txtIp_address.Location = New System.Drawing.Point(35, 533)
         Me.txtIp_address.Name = "txtIp_address"
-        Me.txtIp_address.Size = New System.Drawing.Size(190, 20)
+        Me.txtIp_address.Size = New System.Drawing.Size(104, 20)
         Me.txtIp_address.TabIndex = 3
         '
         'Label1
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 531)
+        Me.Label1.Location = New System.Drawing.Point(9, 536)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(75, 13)
+        Me.Label1.Size = New System.Drawing.Size(20, 13)
         Me.Label1.TabIndex = 4
-        Me.Label1.Text = "IP ADDRESS:"
+        Me.Label1.Text = "IP:"
         '
         'Label2
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(289, 531)
+        Me.Label2.Location = New System.Drawing.Point(145, 536)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(41, 13)
         Me.Label2.TabIndex = 5
@@ -90,7 +90,7 @@ Partial Class ip_address
         'btnAdd
         '
         Me.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnAdd.Location = New System.Drawing.Point(713, 526)
+        Me.btnAdd.Location = New System.Drawing.Point(397, 531)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(75, 23)
         Me.btnAdd.TabIndex = 6
@@ -101,7 +101,7 @@ Partial Class ip_address
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 561)
+        Me.ClientSize = New System.Drawing.Size(484, 561)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)

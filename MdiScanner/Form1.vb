@@ -79,17 +79,17 @@ Public Class Form1
         Dim ipAddressColumn As New DataGridViewTextBoxColumn()
         ipAddressColumn.DataPropertyName = "ip_address"
         ipAddressColumn.HeaderText = "IP ADDRESS"
-        ipAddressColumn.Width = 200
+        ipAddressColumn.Width = 100
         DataGridView1.Columns.Add(ipAddressColumn)
         Dim nameColumn As New DataGridViewTextBoxColumn()
         nameColumn.DataPropertyName = "name"
         nameColumn.HeaderText = "NAME"
-        nameColumn.Width = 450
+        nameColumn.Width = 252
         DataGridView1.Columns.Add(nameColumn)
         Dim statusColumn As New DataGridViewTextBoxColumn()
         statusColumn.DataPropertyName = "status"
         statusColumn.HeaderText = "STATUS"
-        statusColumn.Width = 83
+        statusColumn.Width = 65
         DataGridView1.Columns.Add(statusColumn)
         For Each column As DataGridViewColumn In DataGridView1.Columns
             Console.WriteLine($"Column Name: {column.Name}, Index: {column.Index}")

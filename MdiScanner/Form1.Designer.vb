@@ -37,7 +37,7 @@ Partial Class Form1
         '
         'btn_add
         '
-        Me.btn_add.Location = New System.Drawing.Point(713, 12)
+        Me.btn_add.Location = New System.Drawing.Point(397, 12)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(75, 23)
         Me.btn_add.TabIndex = 0
@@ -50,13 +50,13 @@ Partial Class Form1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(12, 41)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(776, 479)
+        Me.DataGridView1.Size = New System.Drawing.Size(460, 479)
         Me.DataGridView1.TabIndex = 2
         '
         'btnStop
         '
         Me.btnStop.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnStop.Location = New System.Drawing.Point(512, 526)
+        Me.btnStop.Location = New System.Drawing.Point(354, 526)
         Me.btnStop.Name = "btnStop"
         Me.btnStop.Size = New System.Drawing.Size(75, 23)
         Me.btnStop.TabIndex = 7
@@ -66,7 +66,7 @@ Partial Class Form1
         'btnScan
         '
         Me.btnScan.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnScan.Location = New System.Drawing.Point(431, 526)
+        Me.btnScan.Location = New System.Drawing.Point(273, 526)
         Me.btnScan.Name = "btnScan"
         Me.btnScan.Size = New System.Drawing.Size(75, 23)
         Me.btnScan.TabIndex = 8
@@ -76,7 +76,7 @@ Partial Class Form1
         'txtInterval
         '
         Me.txtInterval.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.txtInterval.Location = New System.Drawing.Point(325, 529)
+        Me.txtInterval.Location = New System.Drawing.Point(167, 529)
         Me.txtInterval.Name = "txtInterval"
         Me.txtInterval.Size = New System.Drawing.Size(100, 20)
         Me.txtInterval.TabIndex = 9
@@ -85,7 +85,7 @@ Partial Class Form1
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(198, 532)
+        Me.Label1.Location = New System.Drawing.Point(40, 532)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(121, 13)
         Me.Label1.TabIndex = 10
@@ -104,7 +104,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 561)
+        Me.ClientSize = New System.Drawing.Size(484, 561)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtInterval)
